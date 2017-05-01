@@ -10,8 +10,12 @@ var TicTacToe = function() {
   this.playerOne = '',
   this.playerTwo = '',
   this.currentBoard = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
-  this.boardMove = ['top left', 'top', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom', 'bottom right'];
+  this.boardMoves = ['top left', 'top', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom', 'bottom right'];
   this.totalMoves = 0;
+  this.currentPlayer = this.playerOne;
+  this.playerOneMarker = 'X';
+  this.playerTwoMarker = 'O';
+  this.availableMoves = ['top left', 'top', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom', 'bottom right'];
 };
 
 TicTacToe.prototype.printGameBoard = function() {
@@ -28,9 +32,13 @@ TicTacToe.prototype.playGame = function() {
     rl.question('Whose player Two? ', function(answer) {
       this.playerTwo = answer;
       this.printGameBoard();
-      this.
+      // invoke function current turn
 
       rl.on('line', function (input) {
+        // on input of a move
+          // run move function
+        // on input of non-move
+          // this.error()
 
       });
 
@@ -38,6 +46,26 @@ TicTacToe.prototype.playGame = function() {
   });
 };
 
-TicTacToe.prototype.moves = function() {
+TicTacToe.prototype.move = function(move) {
+  // check if move is available
+    // if not, return error
+  // if so, replace index of currentBoad that matches boardmove index with the marker of the current player
+    // remove move from availble moves
+    // check for win condition
+    // update currentPlayer
+    // invoke currentTurn
+};
+
+TicTacToe.prototype.currentTurn = function() {
+  console.log('It is ', this.currentPlayer, '\'s turn');
+  console.log('the available moves are: ', this.availableMoves);
+};
+
+TicTacToe.prototype.checkWinner = function() {
+  // 
+};
+
+TicTacToe.prototype.error = function() {
 
 };
+
